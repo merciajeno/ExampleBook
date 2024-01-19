@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.in28minutes.bookstore.entities.Book;
 import com.in28minutes.bookstore.repository.AuthorRepository;
 import com.in28minutes.bookstore.repository.BookRepository;
+import com.in28minutes.bookstore.repository.CustomerRepository;
 
 @SpringBootApplication
 public class BookstoreApplication implements CommandLineRunner{
@@ -17,6 +18,9 @@ public class BookstoreApplication implements CommandLineRunner{
 	
 	@Autowired
 	AuthorRepository authRepo;
+	
+	@Autowired
+	CustomerRepository custRepo;
 
 	public static void main(String[] args)  {
 		SpringApplication.run(BookstoreApplication.class, args);
@@ -31,6 +35,8 @@ public class BookstoreApplication implements CommandLineRunner{
 		bookRepo.findBooks(20001);
 		
 		authRepo.getBooksForAuthor(20002);
+		
+		custRepo.getBookForCustomer(30001);
 
 	}
 

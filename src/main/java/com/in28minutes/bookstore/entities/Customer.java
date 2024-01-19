@@ -58,5 +58,11 @@ public class Customer {
 		else
 			System.out.println("This book is not available here!!");
 	}
+
+	public List<Book> getBooks() {
+		return books;
+	}
+	
+	
 	
 }
