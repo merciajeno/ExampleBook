@@ -37,5 +37,10 @@ public class BookRepository {
 		book.setAuthor(author);
 		em.persist(book);
 	}
+	
+	public void addBookToTheRepo(Book book)
+	{
+		em.persist(book);
+	}
 
 }

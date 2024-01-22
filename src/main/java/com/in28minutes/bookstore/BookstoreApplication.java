@@ -5,6 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.in28minutes.bookstore.entities.Author;
 import com.in28minutes.bookstore.entities.Book;
 import com.in28minutes.bookstore.repository.AuthorRepository;
 import com.in28minutes.bookstore.repository.BookRepository;
@@ -37,6 +38,13 @@ public class BookstoreApplication implements CommandLineRunner{
 		authRepo.getBooksForAuthor(20002);
 		
 		custRepo.getBookForCustomer(30001);
+		Book book1 =new Book("IMJ's Life");
+		Author auth = new Author("Hamilton");
+		authRepo.addAuthorToRepo(auth);
+		auth.addBooks(book1);
+		book1.setAuthor(auth);
+		custRepo.AddCustomerForBook(book1, 30002);
+		custRepo.getBookForCustomer(30002);
 
 	}
 

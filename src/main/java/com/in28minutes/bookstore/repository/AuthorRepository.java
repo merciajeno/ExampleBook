@@ -24,4 +24,9 @@ public class AuthorRepository {
 		Author author = em.find(Author.class, id);
 		logger.info("Author-{} Books-{}",author,author.getBooks());
 	}
+	
+	public void addAuthorToRepo(Author author)
+	{
+		em.persist(author);
+	}
 }

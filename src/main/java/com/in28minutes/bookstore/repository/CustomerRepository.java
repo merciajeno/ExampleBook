@@ -29,4 +29,19 @@ public class CustomerRepository {
 		List<Book> books = customer.getBooks();
 		logger.info("customer->{} books->{}",customer,books);
 	}
+	
+	public void AddCustomerForBook(Book book,int id)
+	{
+		Customer customer = em.find(Customer.class, id);
+		System.out.println(customer);
+		customer.addBook(book);
+	    book.addCustomer(customer);
+		em.merge(book);
+		
+	}
+	
+	public void addCustomerToRepo(Customer customer)
+	{
+		em.persist(customer);
+	}
 }

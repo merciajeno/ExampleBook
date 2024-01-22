@@ -1,5 +1,6 @@
 package com.in28minutes.bookstore.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -18,7 +19,7 @@ public class Customer {
 	private String customer_name;
 	
 	@ManyToMany(mappedBy = "customers")
-	private List<Book> books;
+	private List<Book> books = new ArrayList<>();
 
 	public Customer(String customer_name) {
 		super();
